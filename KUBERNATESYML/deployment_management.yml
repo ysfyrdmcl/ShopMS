@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: managementdeployment
+  labels:
+    team: blalba
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: management-service    
+  template:
+    metadata:
+      labels:
+        app: management-service 
+    spec:
+      containers:        
+        - image: ysfyrdmcl/shopms:v002
+          name:  podmanagement
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "0.1"
+            limits:
+              memory: "2Gi"
+              cpu: "0.25"
+          ports:
+            - containerPort: 7070      
+          env:
+            - name:  SEARCHURL
+              valueFrom:
+                secretKeyRef:
+                  name: yarismasecret
+                  key: search_url
+ 

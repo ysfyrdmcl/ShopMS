@@ -1,0 +1,4 @@
+rootProject.name = 'ShopMS'
+include 'management-service'
+include 'searching-service'
+

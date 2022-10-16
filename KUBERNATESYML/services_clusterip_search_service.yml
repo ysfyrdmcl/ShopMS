@@ -1,0 +1,19 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: loadbalancer-search
+
+spec:
+  selector:
+    app: search-service
+
+  type: ClusterIP
+
+  ports:
+    - name: search-service
+
+      port: 7071
+
+      targetPort: 7071

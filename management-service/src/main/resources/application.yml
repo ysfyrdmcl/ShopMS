@@ -1,0 +1,10 @@
+server:
+  port: 7070
+spring:
+  data:
+    mongodb:
+      host: 34.170.144.118
+      port: 19589
+      database: shopms
+      username: temp
+      password: "12345"

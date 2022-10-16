@@ -1,0 +1,19 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: loadbalancer-manager
+
+spec:
+  selector:
+    app: manager-service
+
+  type: ClusterIP
+
+  ports:
+    - name: manager-service
+
+      port: 7070
+
+      targetPort: 7070
